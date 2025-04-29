@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>CSI Exam Registration</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"/>
+  <style>
+    body {
+      background: url('image/WhatsApp Image 2025-04-21 at 10.04.02_6fca67f2.jpg') no-repeat center center fixed;
+      background-size: cover;
+      font-family: 'Segoe UI', sans-serif;
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 50px; 
+  padding: 20px; 
+}
+
+.glass {
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 20px;
+  backdrop-filter: blur(12px);
+  padding: 40px 30px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.6);
+  text-align: center;
+  width: 90%;
+  max-width: 600px;
+}
+
+.glass img {
+  display: block;
+  margin: 0 auto;
+  width: 120px;
+}
+
+h3, h4, label {
+  color: #ffcc00;
+}
+
+ul {
+  margin: 50px;
+  text-align: left;
+}
+
+
+
+
+  </style>
+</head>
+<body>
+  <div class="glass">
+  <img src="image/csi-removebg-preview.png" alt="CSI Logo"  >
+    <h3>  CSI College of Engineering, Ketti <br><br>Common Entrance Exam 2025-2026<br> Registration</h3>
+    <form id="registrationForm">
+      <label>Full Name:</label>
+      <input type="text" id="name" class="form-control" required><br>
+      <label>Date of Birth:</label>
+      <input type="date" id="dob" class="form-control" required><br>
+      <button type="submit" class="btn btn-warning mt-3">Proceed </button>
+    </form>
+  </div>
+
+
+
+
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.22.2/firebase-app.js";
+    import { getDatabase, ref, push } from "https://www.gstatic.com/firebasejs/9.22.2/firebase-database.js";
+
+    const firebaseConfig = {
+      apiKey: "AIzaSyD6FMVpQ5kRpvDxm8fsigRZgZcnZ18ezx4",
+      authDomain: "entrance-98782.firebaseapp.com",
+      databaseURL: "https://entrance-98782-default-rtdb.firebaseio.com",
+      projectId: "entrance-98782",
+      storageBucket: "entrance-98782.appspot.com",
+      messagingSenderId: "764038287622",
+      appId: "1:764038287622:web:49e8228859f27091210e87"
+    };
+
+    const app = initializeApp(firebaseConfig);
+    const db = getDatabase(app);
+
+    document.getElementById("registrationForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+
+      const name = document.getElementById("name").value;
+      const dob = document.getElementById("dob").value;
+
+      localStorage.setItem("studentName", name);
+      localStorage.setItem("studentDOB", dob);
+
+      push(ref(db, 'registrations'), { name, dob, time: new Date().toISOString() })
+        .then(() => window.location.href = "rules.php")
+        .catch(err => alert("Error: " + err));
+    });
+  </script>
+</body>
+</html>

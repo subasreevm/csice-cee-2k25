@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CSI Entrance Exam</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    html, body {
+      height: 100%;
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: url('image/WhatsApp Image 2025-04-21 at 10.04.02_6fca67f2.jpg') no-repeat center center fixed;
+      background-size: cover;
+      color: white;
+      position: relative;
+      z-index: 1;
+    }
+
+    body::before {
+      content: '';
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      background: rgba(0, 0, 0, 0.5);
+      z-index: -1;
+    }
+
+    .page-wrapper {
+      min-height: 100%;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .content {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 40px 20px;
+    }
+
+    .glass-box {
+      background:transparent;
+      backdrop-filter: blur(15px);
+      -webkit-backdrop-filter: blur(15px);
+      border-radius: 20px;
+      padding: 40px;
+      max-width: 500px;
+      width: 100%;
+      text-align: center;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      box-shadow: 0 0 30px rgba(0, 0, 0, 0.4);
+    }
+
+    .glass-box img {
+      width: 100px;
+      margin-bottom: 20px;
+    }
+
+    .glass-box h1 {
+      font-size: 2.5rem;
+      font-weight: bold;
+      color: #ffcc00;
+      text-shadow: 2px 2px 8px #000;
+    }
+
+    .btn-warning {
+      font-weight: 600;
+      padding: 10px 30px;
+      font-size: 1.1rem;
+    }
+
+    footer {
+      background-color: transparent;
+      text-align: center;
+      padding: 15px 0;
+      color: white;
+    }
+
+    a.text-warning:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <div class="page-wrapper">
+    <div class="content">
+      <div class="glass-box">
+        <img src="image/csi-removebg-preview.png" alt="CSI Logo" >
+        <h1>CSI College of Engineering</h1><br>
+        <p class="lead">Common Entrance Examination 2025-2026</p>
+        <a href="reg.php" class="btn btn-warning mt-3">Proceed to Login</a>
+      </div>
+    </div>
+
+    <footer>
+      <p class="mb-1">&copy; 2025 CSI College of Engineering. All rights reserved.</p>
+      <p class="mb-0">Contact: <a href="mailto:info@csice.edu.in" class="text-warning">info@csice.edu.in</a></p>
+    </footer>
+  </div>
+</body>
+</html>

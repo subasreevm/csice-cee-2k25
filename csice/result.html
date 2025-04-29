@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Exam Completed</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      background: url('image/WhatsApp Image 2025-04-21 at 10.04.02_6fca67f2.jpg') no-repeat center center fixed;
+      background-size: cover;
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      font-family: 'Segoe UI', sans-serif;
+    }
+    .glass {
+      background: rgba(255, 255, 255, 0.08);
+      padding: 30px;
+      border-radius: 20px;
+      text-align: center;
+      backdrop-filter: blur(10px);
+      max-width: 600px;
+    }
+    h1, p {
+      color: #ffcc00;
+    }
+  </style>
+</head>
+<body>
+  <div class="glass">
+    <h1>Exam Submitted</h1>
+    <div id="resultBox">
+      <p>✅ Thank you! You have successfully completed your exam.</p>
+      <p>🔒 Your responses have been securely submitted and recorded.</p>
+    </div>
+  </div>
+
+  <script>
+    const data = JSON.parse(localStorage.getItem("resultData"));
+
+    if (!data) {
+      document.getElementById("resultBox").innerHTML = `<p>Result not available. Please complete the exam first.</p>`;
+    }
+  </script>
+</body>
+</html>
